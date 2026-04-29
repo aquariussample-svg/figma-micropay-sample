@@ -1,4 +1,4 @@
-import { createBrowserRouter, isRouteErrorResponse, useRouteError } from "react-router";
+import { Navigate, createBrowserRouter, isRouteErrorResponse, useRouteError } from "react-router";
 import { Layout } from "./components/Layout";
 import { Login } from "./pages/Login";
 import { Dashboard } from "./pages/Dashboard";
@@ -43,7 +43,8 @@ export const router = createBrowserRouter([
     Component: Layout,
     errorElement: <RouteErrorPage />,
     children: [
-      { index: true, Component: Dashboard },
+      { index: true, element: <Navigate to="/login" replace /> },
+      { path: "dashboard", Component: Dashboard },
       { path: "employees", Component: Employees },
       { path: "payroll", Component: Payroll },
       { path: "integrations", Component: Integrations },
