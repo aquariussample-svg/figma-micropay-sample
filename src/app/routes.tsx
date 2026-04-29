@@ -1,6 +1,5 @@
-import { createBrowserRouter, isRouteErrorResponse, useRouteError } from "react-router";
+import { Navigate, createBrowserRouter, isRouteErrorResponse, useRouteError } from "react-router";
 import { Layout } from "./components/Layout";
-import { Login } from "./pages/Login";
 import { Dashboard } from "./pages/Dashboard";
 import { Employees } from "./pages/Employees";
 import { Payroll } from "./pages/Payroll";
@@ -37,7 +36,7 @@ function RouteErrorPage() {
 }
 
 export const router = createBrowserRouter([
-  { path: "/login", Component: Login, errorElement: <RouteErrorPage /> },
+  { path: "/login", element: <Navigate to="/dashboard" replace />, errorElement: <RouteErrorPage /> },
   {
     path: "/",
     Component: Layout,
