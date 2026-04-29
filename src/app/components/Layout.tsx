@@ -66,7 +66,7 @@ export function Layout() {
   }, []);
 
   const navItems = [
-    { name: "Dashboard", path: "/", icon: LayoutDashboard },
+    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     { name: "Employee Management", path: "/employees", icon: Users },
     { name: "Payroll Engine", path: "/payroll", icon: Banknote },
     { name: "Integrations", path: "/integrations", icon: Network },
@@ -94,7 +94,7 @@ export function Layout() {
   // Function to generate breadcrumbs
   const generateBreadcrumbs = () => {
     const pathSegments = location.pathname.split('/').filter(Boolean);
-    const breadcrumbs = [{ name: "Dashboard", path: "/" }];
+    const breadcrumbs = [{ name: "Dashboard", path: "/dashboard" }];
 
     if (pathSegments.length === 0) return breadcrumbs;
 
